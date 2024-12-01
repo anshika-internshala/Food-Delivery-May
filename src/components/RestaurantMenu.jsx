@@ -22,7 +22,7 @@ function RestaurantMenu() {
   async function fetchMenuItems() {
     console.log("id", params.id);
     const response = await fetch(
-      `http://localhost:3000/api/restaurantMenuItems/${params.id}`
+      `https://food-delivery-may.onrender.com/api/restaurantMenuItems/${params.id}`
     );
     const data = await response.json();
 

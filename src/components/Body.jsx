@@ -26,13 +26,16 @@ function Body() {
 
   async function fetchRestaurants() {
     const accessToken = localStorage.getItem("accessToken");
-    const response = await fetch("http://localhost:3000/api/restaurants/", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `JWT ${accessToken}`,
-      },
-    });
+    const response = await fetch(
+      "https://food-delivery-may.onrender.com/api/restaurants/",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `JWT ${accessToken}`,
+        },
+      }
+    );
 
     const result = await response.json();
 

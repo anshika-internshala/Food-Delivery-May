@@ -9,17 +9,20 @@ function Login(props) {
   function handleRegister(e) {
     e.preventDefault();
     console.log("Handle Register called");
-    const response = fetch("http://localhost:3000/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        fullName: fullName,
-        email: email,
-        password: password,
-      }),
-    });
+    const response = fetch(
+      "https://food-delivery-may.onrender.com/api/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: fullName,
+          email: email,
+          password: password,
+        }),
+      }
+    );
 
     const result = response.then((data) => data.json());
     result.then((data) => {
@@ -34,7 +37,7 @@ function Login(props) {
   function handleLogin(e) {
     e.preventDefault();
 
-    const response = fetch("http://localhost:3000/api/login", {
+    const response = fetch("https://food-delivery-may.onrender.com/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
